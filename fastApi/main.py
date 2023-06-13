@@ -42,6 +42,8 @@ import json
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 import numpy as np
+from tensorflow.keras.preprocessing.text import tokenizer_from_json
+
 
 
 
@@ -61,8 +63,25 @@ model = tf.keras.models.load_model('./model_kedua_new.h5',compile = False) # men
 # model = tf.saved_model.load("./my_model_folder")
 # Load tokenizer from JSON file
 with open('tokenizer_word_index.json', 'r') as f:
-    tokenizer_json = json.load(f)
-    tokenizer = Tokenizer(tokenizer_json)
+    tokenizer_word_index  = json.load(f)
+
+tokenizer = Tokenizer()
+tokenizer.word_index = tokenizer_word_index
+
+# job = ['Akuntan', 'Designer', 'Guru', 'Kesehatan','IT']
+
+# # convert inputan user
+# MAX_SEQUENCE_LENGTH = 250
+
+# sequence = tokenizer.texts_to_sequences(['saya suka mengobati orang di rumah sakit'])
+# test = pad_sequences(sequence, maxlen=MAX_SEQUENCE_LENGTH)
+
+# # predict model dari inputan user
+# print(model.predict(test))
+
+# # karena berbentuk arry probabilitas maka menggunakan code dibawah
+# print(job[np.around(model.predict(test), decimals=0).argmax(axis=1)[0]])
+
 
 app = FastAPI(
     title = 'InFenTor Model Fast API',
@@ -99,7 +118,6 @@ def predict_text(req: RequestText, response: Response):
 
         text = preprocess_text(text)
 
-
         # TAHAP MODELLING #
 
         # Max number of words in each description.
@@ -107,7 +125,7 @@ def predict_text(req: RequestText, response: Response):
 
 
         # convert inputan user untuk prediksi model
-        sequence = tokenizer.texts_to_sequences(['saya suka programming'])
+        sequence = tokenizer.texts_to_sequences([text])
         test = pad_sequences(sequence, maxlen=MAX_SEQUENCE_LENGTH)
 
 
@@ -122,7 +140,7 @@ def predict_text(req: RequestText, response: Response):
         print(result)
 
 
-        return "Endpoint not implemented"
+        return result
     
     
     except Exception as e:
@@ -131,40 +149,8 @@ def predict_text(req: RequestText, response: Response):
         return "Internal Server Error"
 
 
-
-# # If your model need image input use this endpoint!
-# @app.post("/predict_image")
-# def predict_image(uploaded_file: UploadFile, response: Response):
-#     try:
-#         # Checking if it's an image
-#         if uploaded_file.content_type not in ["image/jpeg", "image/png"]:
-#             response.status_code = 400
-#             return "File is Not an Image"
-        
-#         # In here you will get a numpy array in "image" variable.
-#         # You can use this file, to load and do processing
-#         # later down the line
-#         image = load_image_into_numpy_array(uploaded_file.file.read())
-#         print("Image shape:", image.shape)
-        
-#         # Step 1: (Optional, but you should have one) Do your image preprocessing
-        
-#         # Step 2: Prepare your data to your model
-        
-#         # Step 3: Predict the data
-#         # result = model.predict(...)
-        
-#         # Step 4: Change the result your determined API output
-        
-#         return "Endpoint not implemented"
-#     except Exception as e:
-#         traceback.print_exc()
-#         response.status_code = 500
-#         return "Internal Server Error"
-
-
 # Starting the server
 # Your can check the API documentation easily using /docs after the server is running
 port = os.environ.get("PORT", 8080)
 print(f"Listening to http://0.0.0.0:{port}")
-uvicorn.run(app, host='0.0.0.0',port=port)
+uvicorn.run(app, host='127.0.0.1',port=port)
