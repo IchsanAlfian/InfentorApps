@@ -1,38 +1,3 @@
-# README
-# Hello everyone, in here I (Kaenova | Bangkit Mentor ML-20) 
-# will give you some headstart on createing ML API. 
-# Please read every lines and comments carefully. 
-# 
-# I give you a headstart on text based input and image based input API. 
-# To run this server, don't forget to install all the libraries in the
-# requirements.txt simply by "pip install -r requirements.txt" 
-# and then use "python main.py" to run it
-# 
-# For ML:
-# Please prepare your model either in .h5 or saved model format.
-# Put your model in the same folder as this main.py file.
-# You will load your model down the line into this code. 
-# There are 2 option I give you, either your model image based input 
-# or text based input. You need to finish functions "def predict_text" or "def predict_image"
-# 
-# For CC:
-# You can check the endpoint that ML being used, eiter it's /predict_text or 
-# /predict_image. For /predict_text you need a JSON {"text": "your text"},
-# and for /predict_image you need to send an multipart-form with a "uploaded_file" 
-# field. you can see this api documentation when running this server and go into /docs
-# I also prepared the Dockerfile so you can easily modify and create a container iamge
-# The default port is 8080, but you can inject PORT environement variable.
-# 
-# If you want to have consultation with me
-# just chat me through Discord (kaenova#2859) and arrange the consultation time
-#
-# Share your capstone application with me! 🥳
-# Instagram @kaenovama
-# Twitter @kaenovama
-# LinkedIn /in/kaenova
-
-## Start your code here! ##
-
 import os
 import uvicorn
 import traceback
@@ -53,14 +18,9 @@ from fastapi import FastAPI, Response, UploadFile
 from utils import load_image_into_numpy_array
 
 
-# Initialize Model
-# If you already put yout model in the same folder as this main.py
-# You can load .h5 model or any model below this line
-
 # If you use h5 type uncomment line below
-model = tf.keras.models.load_model('./model_kedua_new.h5',compile = False) # mengunakan model .h5
-# If you use saved model type uncomment line below
-# model = tf.saved_model.load("./my_model_folder")
+model = tf.keras.models.load_model('./model_embed10k.h5',compile = False) # mengunakan model .h5
+
 # Load tokenizer from JSON file
 with open('tokenizer_word_index.json', 'r') as f:
     tokenizer_word_index  = json.load(f)
@@ -68,19 +28,6 @@ with open('tokenizer_word_index.json', 'r') as f:
 tokenizer = Tokenizer()
 tokenizer.word_index = tokenizer_word_index
 
-# job = ['Akuntan', 'Designer', 'Guru', 'Kesehatan','IT']
-
-# # convert inputan user
-# MAX_SEQUENCE_LENGTH = 250
-
-# sequence = tokenizer.texts_to_sequences(['saya suka mengobati orang di rumah sakit'])
-# test = pad_sequences(sequence, maxlen=MAX_SEQUENCE_LENGTH)
-
-# # predict model dari inputan user
-# print(model.predict(test))
-
-# # karena berbentuk arry probabilitas maka menggunakan code dibawah
-# print(job[np.around(model.predict(test), decimals=0).argmax(axis=1)[0]])
 
 
 app = FastAPI(
