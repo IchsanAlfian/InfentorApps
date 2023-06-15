@@ -6,7 +6,10 @@ const {Job} = require('../models')
 router.get('/', async (req, res) => {
     const job = await Job.findAll();
 
-    res.json(job);
+    res.json({
+        message: 'success',
+        jobs: job
+    });
 })
 
 
