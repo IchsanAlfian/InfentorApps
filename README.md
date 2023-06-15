@@ -1,2 +1,0 @@
-# InfentorApps
-Infentor apps
