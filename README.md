@@ -8,7 +8,7 @@ InFenTor is a mobile app designed to address the lack of understanding of childr
 Using the app is simple: children answer intelligence-related questions, and the application generates personalized results. These results include the child's intelligence type, potential career paths, and famous figures who share the same career, serving as role models. 
 
 # RESTful API
-In the developtment the **RESTful API** we use Javascript with a nodeJS framework's [ExpressJs](https://expressjs.com/) deployed in [Google Cloud Platform](https://cloud.google.com/) services using [Google Cloud App Engine](https://cloud.google.com/appengine) for communicating between Machine Learning models and Frontend Mobile Development. We also using Google Cloud Compute Engine](https://cloud.google.com/compute) service, [Cloud Storage](https://cloud.google.com/storage) and [Cloud SQL](https://cloud.google.com/sql) for database. In addition we use Firebase Authentication in making register and login service to user can access the service.
+In the developtment the **RESTful API** we use Javascript with a nodeJS framework's [ExpressJs](https://expressjs.com/) deployed in [Google Cloud Platform](https://cloud.google.com/) services using [Google Cloud App Engine](https://cloud.google.com/appengine) for communicating between Machine Learning models and Frontend Mobile Development. We also using [Google Cloud Compute Engine](https://cloud.google.com/compute) service, [Cloud Storage](https://cloud.google.com/storage) and [Cloud SQL](https://cloud.google.com/sql) for database. In addition we use Firebase Authentication in making register and login service to user can access the service.
 > base url: https://infentor.et.r.appspot.com
 
 # How to use
