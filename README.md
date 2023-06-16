@@ -1,3 +1,3 @@
 # InfentorApps
 
-##The Active Branch are Cloud-Computing and Machine Learning
+## The Active Branch are Cloud-Computing and Machine Learning
