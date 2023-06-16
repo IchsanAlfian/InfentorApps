@@ -20,4 +20,9 @@ sing the app is simple: children answer intelligence-related questions, and the 
 InFenTor uses Multiclass NLP Texs-Classificatoin to recommend user careers. The user will be given an essay question and then InFenTor will determine a suitable recommendation from the user's answer. InFenTor uses data from kaggle about job descriptions and job resumes, the dataset is combined into 1 [dataset](https://github.com/IchsanAlfian/InfentorApps/blob/Machine-Learning/Dataset_InFenTor.xlsx) . For the time being InFenTor recommends only 5 careers (Accountant, Designer, Teacher, IT, and Healthcare). InFenTor is formed by LSTM layer, softmax activation, and has .h5 output. 
 
     
+## **References**
 
+[Jurnal_InFenTor](https://drive.google.com/drive/folders/1KRRW0fQZkaovoYj-NYSsNksPmkSDb-4F)
+
+
+## **Thank You!!**
