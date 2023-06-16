@@ -17,9 +17,9 @@ from urllib.request import Request
 from fastapi import FastAPI, Response, UploadFile
 from utils import load_image_into_numpy_array
 
-
-# If you use h5 type uncomment line below
+# upload model
 model = tf.keras.models.load_model('./model_embed10k.h5',compile = False) # mengunakan model .h5
+
 
 # Load tokenizer from JSON file
 with open('tokenizer_word_index.json', 'r') as f:
