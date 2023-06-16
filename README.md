@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/Logo%20Infentor%20NO%20BG.png" alt="Infentor logo" />
+  <img src="img/Logo%20Infentor%20NO%20BG.png" alt="Infentor logo" width="300"/>
 </p>
 
 # InFentorApps
