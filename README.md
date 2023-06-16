@@ -1,11 +1,25 @@
 <p align="center">
-  <img src="img/Logo%20Infentor%20NO%20BG.png" alt="Infentor logo" width="300"/>
+  <img src="img/Logo%20Infentor%20NO%20BG.png" alt="Infentor logo" width="300" />
 </p>
 
 # InFentorApps
 InFenTor is a mobile app designed to address the lack of understanding of children's intelligence types in Indonesia. Many children struggle with determining their potential careers and choosing a role model. In response to these challenges, InFenTor offers a solution by providing a user-friendly application to measure children's intelligence types and identify potential careers. The app utilizes a basis of multiple intelligences developed by Howard Gardner.
 
-Using the app is simple: children answer intelligence-related questions, and the application generates personalized results. These results include the child's intelligence type, potential career paths, and famous figures who share the same career, serving as role models. 
+Using the app is simple: children answer intelligence-related questions, and the application generates personalized results. These results include the child's intelligence type, potential career paths, and famous figures who share the same career, serving as role models.
+
+# Team Profile
+
+### Team ID : C23-PS341
+
+### Team 
+
+* (ML) M312DKX4522 – Zulfikar Zahir Hamdani – Defense University 
+* (ML) M288DSY0525– Tasya Rizkia Unsabila –  Yogyakarta State University 
+* (CC) C360DSX3359 – Muhammad Hanif Firmansyah – Telkom University  
+* (CC) C204DSX3234 – Hasbi Al Farabi – Islamic University of Riau 
+* (MD) A360DSX3281 – Syahdi Gharizah Ahsan – Telkom University 
+* (MD) A360DSX3163– Muhammad Ichsan Alfian– Telkom University 
+
 
 # RESTful API
 In the developtment the **RESTful API** we use Javascript with a nodeJS framework's [ExpressJs](https://expressjs.com/) deployed in [Google Cloud Platform](https://cloud.google.com/) services using [Google Cloud App Engine](https://cloud.google.com/appengine) for communicating between Machine Learning models and Frontend Mobile Development. We also using [Google Cloud Compute Engine](https://cloud.google.com/compute) service, [Cloud Storage](https://cloud.google.com/storage) and [Cloud SQL](https://cloud.google.com/sql) for database. In addition we use Firebase Authentication in making register and login service to user can access the service.
@@ -113,8 +127,8 @@ Use Postman to test.
 to run this project, you need to configure the following environment variables:
 > #env
 > APP_NAME=rest-api-infentor
->DB_USERNAME={localusername}
->DB_PASSWORD={your password}
->DB_HOSTNAME={your database host}
->DB_NAME={your db name}
+> DB_USERNAME={localusername}
+> DB_PASSWORD={your password}
+> DB_HOSTNAME={your database host}
+> DB_NAME={your db name}
 > DB_DIALECT={your database}
