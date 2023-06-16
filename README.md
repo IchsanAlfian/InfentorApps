@@ -1,6 +1,7 @@
 <p align="center">
   <img src="img/Logo%20Infentor%20NO%20BG.png" alt="Infentor logo" />
 </p>
+
 # InFentorApps
 InFenTor is a mobile app designed to address the lack of understanding of children's intelligence types in Indonesia. Many children struggle with determining their potential careers and choosing a role model. In response to these challenges, InFenTor offers a solution by providing a user-friendly application to measure children's intelligence types and identify potential careers. The app utilizes a basis of multiple intelligences developed by Howard Gardner.
 
